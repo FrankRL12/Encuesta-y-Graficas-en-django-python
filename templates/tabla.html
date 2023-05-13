@@ -1,0 +1,33 @@
+{% extends 'templates/base.html' %} 
+
+
+{% load static %}
+
+{% block content %}
+<title>Tabla</title>
+<div class="container">
+  <table class="table table-bordered">
+    <thead>
+      <tr class="table-secondary">
+        <th>Mayor de edad</th>
+        <th>Sabor</th>
+        <th>Calidad</th>
+        <th>Formato</th>
+        <th>Recomendar</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for producto in productos %}
+      <tr class="table-light">
+        <td>{{ producto.mayor_de_edad }}</td>
+        <td>{{ producto.sabor_p }}</td>
+        <td>{{ producto.calidad_p }}</td>
+        <td>{{ producto.formato_p }}</td>
+        <td>{{ producto.recomendar_p }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+  
+{% endblock content %}

@@ -1,0 +1,68 @@
+{% extends 'templates/base.html' %} 
+
+
+{% load static %}
+
+{% block content %}
+<title>Formulario</title>
+<div class="container">
+    <div class="card border">
+      <div class="card-body p-3">
+        <h1 class="card-title text-center">Formulario de evaluación de producto</h1>
+        <form method="post">
+            {% csrf_token %}
+          <div class="form-group">
+            <label for="edad">¿Es usted mayor de edad?</label>
+            <select class="form-control" id="edad" name="mayor_de_edad">
+              <option value="">Seleccione</option>
+              <option value="si">Si</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="sabor">¿Qué le parece el sabor de nuestro producto?</label>
+            <select class="form-control" id="sabor" name="sabor_p">
+            <option value="">Seleccione</option>
+              <option value="Malo">Malo</option>
+              <option value="Regular">Regular</option>
+              <option value="Bien">Bien</option>
+              <option value="Muy bien">Muy bien</option>
+              <option value="Excelente">Excelente</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="calidad">¿Cómo considera la calidad de nuestro producto?</label>
+            <select class="form-control" id="calidad" name="calidad_p">
+                <option value="">Seleccione</option>
+                <option value="Malo">Malo</option>
+                <option value="Regular">Regular</option>
+                <option value="Bien">Bien</option>
+                <option value="Muy bien">Muy bien</option>
+                <option value="Excelente">Excelente</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="formato">¿Es adecuado el formato de la presentación de nuestro producto?</label>
+            <select class="form-control" id="formato" name="formato_p">
+                <option value="">Seleccione</option>
+              <option value="Malo">Malo</option>
+              <option value="Regular">Regular</option>
+              <option value="Bien">Bien</option>
+              <option value="Muy bien">Muy bien</option>
+              <option value="Excelente">Excelente</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="formato">¿Recomendarías nuestro producto?</label>
+            <select class="form-control" id="recomendar" name="recomendar_p">
+                <option value="">Seleccione</option>
+              <option value="Si">Si</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary mt-3">Registrar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
